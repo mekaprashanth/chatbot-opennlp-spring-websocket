@@ -1,0 +1,68 @@
+i would like to book tickets from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i would like to book tickets from <START:source> fromcity <END> to <START:destination> tocity <END>
+i would like to book tickets to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i would like to book tickets on <START:travel_date> 22 Feb <END>
+i would like to book tickets to <START:destination> tocity <END>
+i would like to travel from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i would like to travel from <START:source> fromcity <END> to <START:destination> tocity <END>
+i would like to travel to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i would like to travel on <START:travel_date> 22 Feb <END>
+i would like to travel to <START:destination> tocity <END> 
+i want to book tickets from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i want to book tickets from <START:source> fromcity <END> to <START:destination> tocity <END>
+i want to book tickets to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i want to book tickets from <START:source> fromcity <END>
+i want to book tickets on <START:travel_date> 22 Feb <END>
+i want to go to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i want to travel from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i want to travel from <START:source> fromcity <END> to <START:destination> tocity <END>
+i want to travel to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i want to travel from <START:source> fromcity <END>
+i want to travel on <START:travel_date> 22 Feb <END>
+i want to go on <START:travel_date> 22 Feb <END>
+i need to book tickets from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i need to book tickets from <START:source> fromcity <END> to <START:destination> tocity <END>
+i need to book tickets to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+i need to book tickets to <START:destination> tocity <END>
+i need to book tickets on <START:travel_date> 22 Feb <END>
+please help me in booking tickets from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+please help me in booking tickets from <START:source> fromcity <END> to <START:destination> tocity <END>
+please help me in booking tickets to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+please help me in booking tickets from <START:source> fromcity <END>
+please help me in booking tickets on <START:travel_date> 22 Feb <END>
+can you please book tickets from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+can you please book tickets from <START:source> fromcity <END> to <START:destination> tocity <END>
+can you please book tickets to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+can you please book tickets from <START:source> fromcity <END>
+can you please book tickets on <START:travel_date> 22 Feb <END>
+please book tickets from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+please book tickets from <START:source> fromcity <END> to <START:destination> tocity <END>
+please book tickets to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+please book tickets from <START:source> fromcity <END>
+please book tickets to <START:destination> tocity <END>
+please book tickets on <START:travel_date> 22 Feb <END>
+book me a ticket from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+help me book tickets from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+please help me book tickets from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+please start booking tickets from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+please help me book tickets from <START:source> fromcity <END> to <START:destination> tocity <END>
+please start booking tickets from <START:source> fromcity <END> to <START:destination> tocity <END>
+book me a ticket from <START:source> fromcity <END> to <START:destination> tocity <END>
+please book tickets from <START:source> fromcity <END> to <START:destination> tocity <END>
+book me a ticket on <START:travel_date> 22 Feb <END>
+book me a ticket to <START:destination> tocity <END>
+please book a ticket to <START:destination> tocity <END>
+book me a ticket from <START:source> fromcity <END> on <START:travel_date> 22 Feb <END>
+tickets from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+tickets from <START:source> fromcity <END> to <START:destination> tocity <END>
+tickets to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+tickets from <START:source> fromcity <END>
+tickets to <START:destination> tocity <END>
+tickets on <START:travel_date> 22 Feb <END>
+from <START:source> fromcity <END> to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+from <START:source> fromcity <END> to <START:destination> tocity <END>
+from <START:source> fromcity <END>
+to <START:destination> tocity <END> on <START:travel_date> 22 Feb <END>
+starting from <START:source> fromcity <END>
+to <START:destination> tocity <END>
+on <START:travel_date> 22 Feb <END>

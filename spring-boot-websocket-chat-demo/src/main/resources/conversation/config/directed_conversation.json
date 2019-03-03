@@ -1,0 +1,113 @@
+{
+	"graph": {
+		"directed": true,
+		"label": "Directed Conversation",
+		"nodes": [
+			{
+				"id": "1",
+				"type": "StringReplacing",
+				"label": "This is a math test. You can answer with digits or text.",
+				"metadata": {
+					"snippetType": "STATEMENT"
+				}
+			},
+			{
+				"id": "2",
+				"type": "StringReplacing",
+				"label": "What is 3+3",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "3",
+				"type": "StringReplacing",
+				"label": "You answered {{answer}}",
+				"metadata": {
+					"snippetType": "STATEMENT"
+				}
+			},
+			{
+				"id": "4",
+				"type": "StringReplacing",
+				"label": "That is the correct answer. 3+3={{answer}}",
+				"metadata": {
+					"snippetType": "STATEMENT"
+				}
+			},
+			{
+				"id": "5",
+				"type": "StringReplacing",
+				"label": "\"{{answer}}\" is not correct. Would you like to try again?",
+				"metadata": {
+					"suggestedResponses": [
+						"yes",
+						"no"
+					],
+					"snippetType": "QUESTION"
+				}
+			}
+		],
+		"edges": [
+			{
+				"source": "1",
+				"target": "2",
+				"type": "Statement",
+				"label": "",
+				"directed": true
+			},
+			{
+				"source": "2",
+				"target": "3",
+				"directed": true,
+				"label": "Any number",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "\\d+",
+					"stateKey": "answer"
+				}
+			},
+			{
+				"source": "2",
+				"target": "3",
+				"directed": true,
+				"label": "Anything else",
+				"type": "JavaScript",
+				"metadata": {
+					"isMatchForState": "return true;",
+					"onMatch": "if (state.mostRecentResponse == 'six'){state.answer = 6};return state;"
+				}
+			},
+			{
+				"source": "3",
+				"target": "4",
+				"directed": true,
+				"label": "correct",
+				"type": "JavaScript",
+				"metadata": {
+					"isMatchForState": "return (state.answer === 6);"
+				}
+			},
+			{
+				"source": "3",
+				"target": "5",
+				"directed": true,
+				"label": "incorrect",
+				"type": "JavaScript",
+				"metadata": {
+					"isMatchForState": "return (state.answer != 6);"
+				}
+			},
+			{
+				"source": "5",
+				"target": "2",
+				"directed": true,
+				"label": "yes",
+				"type": "Affirmative",
+				"metadata": {
+					
+				}
+			}
+		]
+	}
+}

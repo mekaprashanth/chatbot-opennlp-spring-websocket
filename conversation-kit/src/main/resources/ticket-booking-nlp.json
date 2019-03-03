@@ -1,0 +1,192 @@
+{
+	"graph": {
+		"directed": true,
+		"label": "Directed Conversation",
+		"nodes": [
+			{
+				"id": "1",
+				"type": "StringReplacing",
+				"label": "I am a Travel Agent bot. I can help you in booking tickets",
+				"metadata": {
+					"snippetType": "STATEMENT"
+				}
+			},
+			{
+				"id": "2",
+				"type": "StringReplacing",
+				"label": "Please enter your travel details",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "3",
+				"type": "StringReplacing",
+				"label": "You want to travel from  \"{{source}}\" to \"{{destination}}\" on \"{{travel_date}}\", please confirm. ",
+				"metadata": {
+					"suggestedResponses": [
+						"yes",
+						"no"
+					],
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "4",
+				"type": "StringReplacing",
+				"label": "from where would you like to travel",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "5",
+				"type": "StringReplacing",
+				"label": "Please provide travel date",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "6",
+				"type": "StringReplacing",
+				"label": "From where and when",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "7",
+				"type": "StringReplacing",
+				"label": "from where to where",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "8",
+				"type": "StringReplacing",
+				"label": "to where and when",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			}
+		],
+		"edges": [
+			{
+				"source": "1",
+				"target": "2",
+				"type": "Statement",
+				"label": "",
+				"directed": true
+			},
+			{
+				"source": "2",
+				"target": "3",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["source", "destination", "travel_date"]
+				}
+			},
+			{
+				"source": "2",
+				"target": "4",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["destination", "travel_date"]
+				}
+			},
+			{
+				"source": "2",
+				"target": "5",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["source", "destination"]
+				}
+			},
+			{
+				"source": "4",
+				"target": "3",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"pattern": "from (\\w+)",
+					"stateKey": ["source"]
+				}
+			},
+			{
+				"source": "2",
+				"target": "6",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["destination"]
+				}
+			},
+			{
+				"source": "2",
+				"target": "7",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["travel_date"]
+				}
+			},
+			{
+				"source": "2",
+				"target": "8",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["source"]
+				}
+			},
+			{
+				"source": "6",
+				"target": "3",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["source", "travel_date"]
+				}
+			},
+			{
+				"source": "7",
+				"target": "3",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["source", "destination"]
+				}
+			},
+			{
+				"source": "8",
+				"target": "3",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["destination", "travel_date"]
+				}
+			},
+			{
+				"source": "5",
+				"target": "3",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["travel_date"]
+				}
+			},
+			{
+				"source": "3",
+				"target": "2",
+				"type": "Statement",
+				"label": "",
+				"directed": true
+			}
+		]
+	}
+}

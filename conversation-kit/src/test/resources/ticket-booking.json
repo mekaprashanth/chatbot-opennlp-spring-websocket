@@ -1,0 +1,126 @@
+{
+	"graph": {
+		"directed": true,
+		"label": "Directed Conversation",
+		"nodes": [
+			{
+				"id": "1",
+				"type": "StringReplacing",
+				"label": "I am a Travel Agent bot. I can help you in booking tickets",
+				"metadata": {
+					"snippetType": "STATEMENT"
+				}
+			},
+			{
+				"id": "2",
+				"type": "StringReplacing",
+				"label": "Please enter your travel details",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "3",
+				"type": "StringReplacing",
+				"label": "You want to travel from  \"{{source}}\" to \"{{destination}}\" on \"{{travel_date}}\", please confirm. ",
+				"metadata": {
+					"suggestedResponses": [
+						"yes",
+						"no"
+					],
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "4",
+				"type": "StringReplacing",
+				"label": "from where would you like to travel",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "5",
+				"type": "StringReplacing",
+				"label": "Please provide travel date",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "6",
+				"type": "StringReplacing",
+				"label": "From where and when",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			}
+		],
+		"edges": [
+			{
+				"source": "1",
+				"target": "2",
+				"type": "Statement",
+				"label": "",
+				"directed": true
+			},
+			{
+				"source": "2",
+				"target": "3",
+				"label": "Any number",
+				"type": "RegexV2",
+				"metadata": {
+					"pattern": "i would like to travel from (\\w+) to (\\w+) on ([0-9]{1,2}.+[a-zA-Z]{3})",
+					"stateKey": ["source", "destination", "travel_date"]
+				}
+			},
+			{
+				"source": "2",
+				"target": "4",
+				"label": "Any number",
+				"type": "RegexV2",
+				"metadata": {
+					"pattern": "i would like to travel to (\\w+) on ([0-9]{1,2}.+[a-zA-Z]{3})",
+					"stateKey": ["destination", "travel_date"]
+				}
+			},
+			{
+				"source": "4",
+				"target": "3",
+				"label": "Any number",
+				"type": "RegexV2",
+				"metadata": {
+					"pattern": "from (\\w+)",
+					"stateKey": ["source"]
+				}
+			},
+			{
+				"source": "2",
+				"target": "6",
+				"label": "Any number",
+				"type": "RegexV2",
+				"metadata": {
+					"pattern": "i would like to travel to (\\w+)",
+					"stateKey": ["destination"]
+				}
+			},
+			{
+				"source": "6",
+				"target": "3",
+				"label": "Any number",
+				"type": "RegexV2",
+				"metadata": {
+					"pattern": "from (\\w+) on ([0-9]{1,2}.+[a-zA-Z]{3})",
+					"stateKey": ["source", "travel_date"]
+				}
+			},
+			{
+				"source": "3",
+				"target": "2",
+				"type": "Statement",
+				"label": "",
+				"directed": true
+			}
+		]
+	}
+}

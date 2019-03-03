@@ -1,0 +1,93 @@
+{
+	"graph": {
+		"directed": true,
+		"label": "Directed Conversation",
+		"nodes": [
+			{
+				"id": "1",
+				"type": "Handlebars",
+				"label": "Ok, sounds like you're experiencing some allergy symptoms.",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"contentType": "TEXT"
+				}
+			},
+			{
+				"id": "2",
+				"type": "Handlebars",
+				"label": "Are your symptoms today mild or severe?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"contentType": "TEXT",
+					"suggestedResponses": "mild|severe|no symptoms"
+				}
+			},
+			{
+				"id": "3",
+				"type": "Handlebars",
+				"label": "What's bothering you the most?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"contentType": "TEXT",
+					"suggestedResponses": "{{#each possibleSymptoms}}{{this}}|{{/each}}"
+				}
+			},
+			{
+				"id": "4",
+				"type": "Handlebars",
+				"label": "That's great news {{name}}!",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"contentType": "TEXT"
+				}
+			}
+		],
+		"edges": [
+			{
+				"source": "1",
+				"target": "2",
+				"directed": true,
+				"label": "",
+				"type": "Statement",
+				"metadata": {
+					
+				}
+			},
+			{
+				"source": "2",
+				"target": "3",
+				"directed": true,
+				"label": "mild",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "(?i)mild",
+					"stateKey": "severity",
+					"stateValue": "1"
+				}
+			},
+			{
+				"source": "2",
+				"target": "3",
+				"directed": true,
+				"label": "mild",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "(?i)severe",
+					"stateKey": "severity",
+					"stateValue": "2"
+				}
+			},
+			{
+				"source": "2",
+				"target": "4",
+				"directed": true,
+				"label": "mild",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "(?i)none|no symptoms",
+					"stateKey": "0"
+				}
+			}
+		]
+	}
+}
