@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import com.conversationkit.builder.JsonGraphBuilder;
 import com.conversationkit.builder.JsonGraphBuilderV1;
-import com.conversationkit.builder.TestCaseUserState;
 import com.conversationkit.impl.DirectedConversationEngine;
 import com.conversationkit.impl.OutputUtil;
 import com.conversationkit.model.IConversationSnippet;
@@ -51,6 +50,7 @@ public class ConversationService<S extends IConversationState<String, Object>> {
 
 		S state = HttpSessionBackedState.buildFromAttributes(sessionAtributes);
 		state.setCurrentNodeId(1);
+		state.set("sender", chatMessage.getSender());
 
 		Iterable<IConversationSnippet<S>> nodes = engine.startConversationFromState(state);
 		StringBuilder convo = new StringBuilder();

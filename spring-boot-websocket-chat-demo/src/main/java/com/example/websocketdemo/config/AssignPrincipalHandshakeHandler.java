@@ -2,7 +2,6 @@ package com.example.websocketdemo.config;
 
 import java.security.Principal;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 

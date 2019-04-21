@@ -1,0 +1,847 @@
+{
+	"graph": {
+		"directed": true,
+		"label": "Santaan Anonymous Dialogue Ver 1.0",
+		"nodes": [
+			{
+				"id": "1",
+				"type": "StringReplacing",
+				"label": "Are you a registered customer ? Pl login through registration number / mobile number/email so that I can serve you better",
+				"metadata": {
+					"snippetType": "STATEMENT"
+				}
+			},
+			{
+				"id": "2",
+				"type": "StringReplacing",
+				"label": "How can I help ? (please enter your query in few simple words or choose from following options)",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"(A) Here to learn/ know more",
+						"(B) Here to understand my fertility chances",
+						"(C) Recently married and looking for family planning",
+						"(D) Actively planning for my first baby",
+						"(E) Planning for second baby",
+						"(F) I am actively looking for egg/embryo freezing",
+						"(G) I am into fertility treatment and I need a second opinion"
+					]
+				}
+			},
+			{
+				"id": "3",
+				"type": "StringReplacing",
+				"label": "Ok. As I understand, you want to know about \"{{assesment-option-selected}}\". Let me assist you with some information.",
+				"metadata": {
+					"snippetType": "STATEMENT"
+				}
+			},
+			{
+				"id": "4",
+				"type": "StringReplacing",
+				"label": "To assist you better, may I ask you few personal questions if you are comfortable?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No"
+					]
+				}
+			},
+			{
+				"id": "5",
+				"type": "StringReplacing",
+				"label": "Thank you. Enter your Name, Email ID and Phone number ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"notification": "(note - We don’t spam. We ensure absolute privacy and your information is protected with medication grade encryption. Its just for better service.  You will recieve a temporary id. As you finish the registration, you will get a permanent id where you can log in and view your details/reports. "
+				}
+			},
+			{
+				"id": "6",
+				"type": "StringReplacing",
+				"label": "What is your age ?",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "7",
+				"type": "DialogTree",
+				"label": "What is your Gender ?",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "8",
+				"type": "StringReplacing",
+				"label": "What is your partner's age ?",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "9",
+				"type": "StringReplacing",
+				"label": "what is your height and weight ?",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "10",
+				"type": "StringReplacing",
+				"label": "what is your partner's height and weight ?",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "11",
+				"type": "StringReplacing",
+				"label": "Are you or your partner having any of these diseases ?\n PCOS \n diabetics \n hypertension \n Thyroid",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No"
+					]
+				}
+			},
+			{
+				"id": "12",
+				"type": "StringReplacing",
+				"label": "Are you or your partner on any medications ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No"
+					]
+				}
+			},
+			{
+				"id": "13",
+				"type": "StringReplacing",
+				"label": "Please enter the details of medication you are under?",
+				"metadata": {
+					"snippetType": "QUESTION",
+				}
+			},
+			{
+				"id": "14",
+				"type": "StringReplacing",
+				"label": "Are {{gender}}==\"Female\"?\"you\":\"your partner\" on Birth Control ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No"
+					]
+				}
+			},
+			{
+				"id": "15",
+				"type": "StringReplacing",
+				"label": "What Type",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Implant",
+						"IUD (Copper)",
+						"IUD (Hormonal)",
+						"Patch",
+						"Pill (Mini)",
+						"Pill (Regular)",
+						"Pill (yes, but I am not sure of the type)",
+						"Ring",
+						"Shot"
+					]
+				}
+			},
+			{
+				"id": "16",
+				"type": "StringReplacing",
+				"label": "Is your Period Regular ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"I don’t get one",
+						"No"
+					]
+				}
+			},
+			{
+				"id": "17",
+				"type": "StringReplacing",
+				"label": "since how long you have been on fertility treatment ?",
+				"metadata": {
+					"snippetType": "QUESTION"
+				}
+			},
+			{
+				"id": "18",
+				"type": "StringReplacing",
+				"label": "what procedures have you gone through ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Medications",
+						"IUI",
+						"IVF",
+						"ICSI"
+					]
+				}
+			},
+			{
+				"id": "19",
+				"type": "StringReplacing",
+				"label": "Have you undergone fertility genetics screening ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No"
+					]
+				}
+			},
+			{
+				"id": "20",
+				"type": "StringReplacing",
+				"label": "Thank you for providing the information. Based on the assessment below is your fertility next steps {{assesment-result}}",
+				"metadata": {
+					"snippetType": "STATEMENT"
+				}
+			},
+			{
+				"id": "21",
+				"type": "StringReplacing",
+				"label": "Based on the assessment, we recommend you to go for  a fertility evaluation which can be done at the convenience of your home. ",
+				"metadata": {
+					"snippetType": "STATEMENT"
+				}
+			},
+			{
+				"id": "22",
+				"type": "StringReplacing",
+				"label": "Based on your assessment, we recommend you to book an appointment for a counseling with our expert.",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes, Please book an appointment",
+						"No, may be sometime in future"
+					]
+				}
+			},
+			{
+				"id": "23",
+				"type": "StringReplacing",
+				"label": "How do you feel about doing a finger prick?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"No problem. I would prefer to test at home",
+						"I would like more info about this",
+						"Hate them(I would go to a lab and have someone draw my blood)"
+					]
+				}
+			},
+			{
+				"id": "24",
+				"type": "StringReplacing",
+				"label": "Information content on Home kit,usage and benefits.. Information link for Home Kit with a option to place an order. Would you like to place an order ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes, I would like to place an order.",
+						"No, I would prefer a appointment for consultation.",
+						"No, may be sometime in future"
+					]
+				}
+			},
+			{
+				"id": "25",
+				"type": "StringReplacing",
+				"label": "No Problem. I recommend you to use these apps and subscrpt for newsletters to keep you updated on recent udpdates.",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"AppName & link",
+						"Subscribe for newsletters"
+					]
+				}
+			},
+			{
+				"id": "26",
+				"type": "StringReplacing",
+				"label": "No problem. Let me help you book an appointment for a counseling with our expert or consultation with our expert. You can either directly to our helpline to book an appointment or follow the instruction below to book appointment online.",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"Call Helpline",
+						"Book Appointment online"
+					]
+				}
+			},
+			{
+				"id": "27",
+				"type": "StringReplacing",
+				"label": "Please  follow the instructions to order home kit. Based on your BMI score, I recommend you to start using a wearable to track your weight and food habits. I also recommend you to get your genetics test done by order Genetic test kit.",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"Order Home Kit",
+						"Order Home Kit and Weight Monitoring wearable",
+						"Order Home Kit, Genetic test Kit and Weight Monitoring wearable",
+						"Order Home Kit, Genetic test Kit",
+						"Order weight monitoring wearable only",
+						"Order Genetic test Kit"
+					]
+				}
+			},
+			{
+				"id": "28",
+				"type": "StringReplacing",
+				"label": "Santaan project Details and links",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"Santaan project Details and links"
+					]
+				}
+			},
+			{
+				"id": "29",
+				"type": "StringReplacing",
+				"label": "Do you like to get more facts ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No"
+					]
+				}
+			},
+			{
+				"id": "30",
+				"type": "StringReplacing",
+				"label": "What would you like to know more ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Family Panning",
+						"Fertility Check",
+						"Egg Freezing",
+						"Fertility Genetics",
+						"Fertility chances",
+						"IVF procedures"
+					]
+				}
+			},
+			{
+				"id": "31",
+				"type": "StringReplacing",
+				"label": "Educational articles and links",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"Educational articles and links"
+					]
+				}
+			},
+			{
+				"id": "32",
+				"type": "StringReplacing",
+				"label": "Would you like to subscript our newsletter service to keep yourself upto date on the recent updates on {{assesment-option-selected}}",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"Educational articles and links"
+					]
+				}
+			},
+			{
+				"id": "33",
+				"type": "StringReplacing",
+				"label": "Based on our assessment, we recommend you to explore below options.",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"1",
+						"2",
+						"3"
+					]
+				}
+			},
+			{
+				"id": "34",
+				"type": "StringReplacing",
+				"label": "Based on your test and since you are not planning for a baby now, we recommend you to consider Egg Freezing",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Eductional Article on egg Freezing",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "35",
+				"type": "StringReplacing",
+				"label": "Based on your test and since you are  planning for your 1st baby, we recommend you to consider TREATMENT (IUI .. )",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Eductional Article on TREATMENT (IUI .. )",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "36",
+				"type": "StringReplacing",
+				"label": "Based on your test and since you are planning for your 2nd baby, we recommend you to consider TREATMENT (IVF .. )",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Eductional Article on TREATMENT (IVF .. )",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "37",
+				"type": "StringReplacing",
+				"label": "Do you want to know more facts about Egg Freezing ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "38",
+				"type": "StringReplacing",
+				"label": "Do you want to know more facts about TREATMENT (IUI .. )",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "39",
+				"type": "StringReplacing",
+				"label": "Do you want to know more facts about TREATMENT (IVF .. )",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "40",
+				"type": "StringReplacing",
+				"label": "Educational articles on Egg freezing cost",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"Educational articles on Egg freezing success cost"
+					]
+				}
+			},
+			{
+				"id": "41",
+				"type": "StringReplacing",
+				"label": "Do you want to know the cost involved in egg freezing procesure ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "42",
+				"type": "StringReplacing",
+				"label": "Have you undergone any treatment in the past related to TREATMENT (IUI .. ) ",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "43",
+				"type": "StringReplacing",
+				"label": "Have you undergone any treatment in the past related to TREATMENT (IVF .. ) ",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "44",
+				"type": "StringReplacing",
+				"label": "Educational articles on Egg freezing success rate",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"Educational articles on Egg freezing success rate"
+					]
+				}
+			},
+			{
+				"id": "45",
+				"type": "StringReplacing",
+				"label": "Do you want to know the success rate in TREATMENT (IUI .. ) procesure ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "46",
+				"type": "StringReplacing",
+				"label": "Do you want to know the success rate in TREATMENT (IVF .. ) procesure ?",
+				"metadata": {
+					"snippetType": "QUESTION",
+					"suggestedResponses": [
+						"Yes",
+						"No",
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "47",
+				"type": "StringReplacing",
+				"label": "Santaan research center has specialized and trained doctors and scientist who I believe may help you clarify your queries and concerns Would you consider to book an appointment with a specialized doctor ?",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "48",
+				"type": "StringReplacing",
+				"label": "Santaan research center has specialized and trained doctors and scientist who I believe may help you clarify your queries and concerns Would you consider to book an appointment with a specialized doctor ?",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			},
+			{
+				"id": "49",
+				"type": "StringReplacing",
+				"label": "Santaan research center has specialized and trained doctors and scientist who I believe may help you clarify your queries and concerns Would you consider to book an appointment with a specialized doctor ?",
+				"metadata": {
+					"snippetType": "STATEMENT",
+					"suggestedResponses": [
+						"Book Appointment online",
+						"Call Us to Book appointment"
+					]
+				}
+			}
+		],
+		"edges": [
+			{
+				"source": "1",
+				"target": "2",
+				"type": "Statement",
+				"label": "",
+				"directed": true
+			},
+			{
+				"source": "2",
+				"target": "3",
+				"label": "Any number",
+				"type": "NLPEval",
+				"metadata": {
+					"stateKey": ["assesment-option-selected"]
+				}
+			},
+			{
+				"source": "3",
+				"target": "4",
+				"label": "",
+				"type": "Statement",
+				"directed": true
+			},
+			{
+				"source": "4",
+				"target": "5",
+				"directed": true,
+				"label": "yes",
+				"type": "Affirmative",
+				"metadata": {
+					
+				}
+			},
+			{
+				"source": "5",
+				"target": "6",
+				"label": "",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "(\\w+), (\\w+) and ({\\d+})",
+					"stateKey": ["name", "email-id", "phone-number"]
+				}
+			},
+			{
+				"source": "6",
+				"target": "7",
+				"label": "Any number",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "({\\d+})",
+					"stateKey": ["age"]
+				}
+			},
+			{
+				"source": "7",
+				"target": "8",
+				"label": "Male or Female",
+				"type": "DialogTree",
+				"metadata": {
+					"ansewer": "Male",
+					"stateKey": ["gender"]
+				}
+			},
+			{
+				"source": "7",
+				"target": "8",
+				"label": "Male or Female",
+				"type": "DialogTree",
+				"metadata": {
+					"ansewer": "Female",
+					"stateKey": ["gender"]
+				}
+			},
+			{
+				"source": "8",
+				"target": "9",
+				"label": "Any number",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "({\\d+})",
+					"stateKey": ["partner-age"]
+				}
+			},
+			{
+				"source": "9",
+				"target": "10",
+				"label": "Any number",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "({\\d+} and (\\d+)) ",
+					"stateKey": ["height", "weight"]
+				}
+			},
+			{
+				"source": "10",
+				"target": "11",
+				"label": "Any number",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "({\\d+} and (\\d+)) ",
+					"stateKey": ["partner-height", "partner-weight"]
+				}
+			},
+			{
+				"source": "11",
+				"target": "12",
+				"label": "Any number",
+				"type": "Affirmative",
+				"metadata": {
+					"stateKey": "has-disease",
+					"stateValue": "Yes"
+				}
+			},
+			{
+				"source": "11",
+				"target": "12",
+				"label": "Any number",
+				"type": "Negative",
+				"metadata": {
+					"stateKey": "has-disease",
+					"stateValue": "No"
+				}
+			},
+			{
+				"source": "12",
+				"target": "13",
+				"label": "Any number",
+				"type": "Affirmative",
+				"metadata": {
+					"stateKey": "under-medication",
+					"stateValue": "Yes"
+				}
+			},
+			{
+				"source": "12",
+				"target": "13",
+				"label": "Any number",
+				"type": "Negative",
+				"metadata": {
+					"stateKey": "under-medication",
+					"stateValue": "No"
+				}
+			},
+			{
+				"source": "13",
+				"target": "14",
+				"label": "Any number",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "({\\w+}",
+					"stateKey": "medication-details"
+				}
+			},
+			{
+				"source": "14",
+				"target": "15",
+				"label": "Any number",
+				"type": "Affirmative",
+				"metadata": {
+					"stateKey": "under-birthControl",
+					"stateValue": "Yes"
+				}
+			},
+			{
+				"source": "14",
+				"target": "16",
+				"label": "Any number",
+				"type": "Negative",
+				"metadata": {
+					"stateKey": "under-birthControl",
+					"stateValue": "No"
+				}
+			},
+			{
+				"source": "15",
+				"target": "16",
+				"label": "Any number",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "({\\w+})",
+					"stateKey": "birth-control-proc"
+				}
+			},
+			{
+				"source": "16",
+				"target": "17",
+				"label": "Any number",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "({\\w+})",
+					"stateKey": "period-regular"
+				}
+			},
+			{
+				"source": "17",
+				"target": "18",
+				"label": "Any number",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "({\\w+})",
+					"stateKey": "treatment-period"
+				}
+			},
+			{
+				"source": "18",
+				"target": "19",
+				"label": "Any number",
+				"type": "Regex",
+				"metadata": {
+					"pattern": "({\\w+})",
+					"stateKey": "treatment-procedure"
+				}
+			},
+			{
+				"source": "19",
+				"target": "20",
+				"label": "Any number",
+				"type": "Affirmative",
+				"metadata": {
+					"stateKey": "fertility-generic-screening",
+					"stateValue": "Yes"
+				}
+			},
+			{
+				"source": "19",
+				"target": "20",
+				"label": "Any number",
+				"type": "Negative",
+				"metadata": {
+					"stateKey": "fertility-generic-screening",
+					"stateValue": "No"
+				}
+			},
+			{
+				"source": "20",
+				"target": "21",
+				"label": "Any number",
+				"type": "Statement",
+				"directed":true
+			},
+			{
+				"source": "21",
+				"target": "22",
+				"label": "Any number",
+				"type": "Statement",
+				"directed":true
+			},
+			{
+				"source": "22",
+				"target": "23",
+				"label": "Any number",
+				"type": "DialogTree",
+				"metadata": {
+					"stateKey": ["fertility-generic-screening"]
+				}
+			},
+		]
+	}
+}

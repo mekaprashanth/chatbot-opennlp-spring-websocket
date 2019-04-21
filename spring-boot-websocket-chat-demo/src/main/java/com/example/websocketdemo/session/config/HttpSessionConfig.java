@@ -22,13 +22,13 @@ import org.springframework.session.web.context.AbstractHttpSessionApplicationIni
 /**
  * @author Rob Winch
  */
-@Configuration
-@EnableRedisHttpSession
-public class HttpSessionConfig extends AbstractHttpSessionApplicationInitializer{
+//@Configuration
+//@EnableRedisHttpSession
+//public class HttpSessionConfig extends AbstractHttpSessionApplicationInitializer{
 
 //    @Bean
 //    public LettuceConnectionFactory connectionFactory() {
 //    	System.out.println("initializing Redis Session");
 //        return new LettuceConnectionFactory();
 //    }
-}
+//}

@@ -21,7 +21,11 @@ public class HttpSessionBackedState implements IConversationState<String, Object
 		this.sessionAtributes = sessionAtributes;
 	}
 
-	@Override
+    public static <S extends IConversationState<String, Object>> S buildFromAttributes(Map<String, Object> sessionAtributes) {
+    	return (S) new HttpSessionBackedState(sessionAtributes);
+    }
+
+    @Override
     public int getCurrentNodeId() {
         Integer id = (Integer)this.get("currentNodeId");
         return id;
@@ -84,10 +88,6 @@ public class HttpSessionBackedState implements IConversationState<String, Object
     	sessionAtributes.put("number", number);
     }
     
-    public static <S extends IConversationState<String, Object>> S buildFromAttributes(Map<String, Object> sessionAtributes) {
-    	return (S) new HttpSessionBackedState(sessionAtributes);
-    }
-
 	@Override
 	public int size() {
 		return sessionAtributes.size();

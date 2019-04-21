@@ -69,7 +69,7 @@ public class JsonGraphBuilder<S extends IConversationState<String, Object>> {
 
     protected enum NodeType {
 
-        StringReplacing, ResponseSuggesting, DialogTree, Hidden
+        StringReplacing, ResponseSuggesting, DialogTree, Hidden, JavaScript
     }
 
     protected enum EdgeType {

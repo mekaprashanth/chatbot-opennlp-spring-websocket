@@ -14,7 +14,7 @@ import redis.embedded.RedisServer;
  *
  * @author Rob Winch
  */
-@Configuration
+//@Configuration
 public class EmbeddedRedisConfiguration {
 
     @Bean

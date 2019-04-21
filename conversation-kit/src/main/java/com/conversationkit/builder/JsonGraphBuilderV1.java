@@ -14,9 +14,17 @@ import com.conversationkit.impl.edge.NegativeEdge;
 import com.conversationkit.impl.edge.RegexEdge;
 import com.conversationkit.impl.edge.RegexEdgeV2;
 import com.conversationkit.impl.edge.StatementEdge;
+import com.conversationkit.impl.node.ConversationNodeButton;
+import com.conversationkit.impl.node.DialogTreeNode;
+import com.conversationkit.impl.node.HiddenNode;
+import com.conversationkit.impl.node.JavaScriptNode;
+import com.conversationkit.impl.node.ResponseSuggestingNode;
+import com.conversationkit.impl.node.StringReplacingNode;
 import com.conversationkit.model.IConversationEdge;
 import com.conversationkit.model.IConversationNode;
 import com.conversationkit.model.IConversationState;
+import com.conversationkit.model.SnippetContentType;
+import com.conversationkit.model.SnippetType;
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
 
@@ -27,6 +35,83 @@ import com.eclipsesource.json.JsonObject;
 public class JsonGraphBuilderV1<S extends IConversationState<String, Object>> extends JsonGraphBuilder<S> {
     private static final Logger logger = Logger.getLogger(JsonGraphBuilderV1.class.getName());
     
+    /**
+     * Creates an <code>IConversationNode</code> from JSON. Override this to
+     * handle additional node types. The call to
+     * <code>super.nodeFromJson()</code> will return null if the node type is
+     * not currently handled.
+     *
+     * @param id the node id
+     * @param type the node type
+     * @param content the value of the content key
+     * @param snippetType question or statement
+     * @param contentType content type to render
+     * @param metadata the additional metadata in the JSON
+     * @return a node or null
+     * @throws IOException exception parsing JSON
+     */
+    @Override
+    protected IConversationNode<S> nodeFromJson(Integer id, String type, String content, SnippetType snippetType, SnippetContentType contentType, JsonObject metadata) throws IOException {
+
+        NodeType nodeType;
+        try {
+            nodeType = NodeType.valueOf(type);
+        } catch (Exception e) {
+            return null;
+        }
+
+        //make the node into something
+        IConversationNode<S> conversationNode = null;
+
+        switch (nodeType) {
+            case Hidden:
+                conversationNode = new HiddenNode(id, snippetType);
+                break;
+            case DialogTree:
+                DialogTreeNode dtNode = new DialogTreeNode(id, snippetType, content);
+                conversationNode = dtNode;
+                break;
+            case StringReplacing:
+                StringReplacingNode srNode = new StringReplacingNode(id, snippetType, content);
+                for (String suggestion : createSuggestionsFromMetadata(metadata)) {
+                    srNode.addSuggestedResponse(suggestion);
+                }
+                for (ConversationNodeButton button : createButtonsFromMetadata(metadata)) {
+                    srNode.addButton(button);
+                }
+                conversationNode = srNode;
+                break;
+            case ResponseSuggesting:
+                ResponseSuggestingNode rsNode = new ResponseSuggestingNode(id, snippetType, content, contentType);
+
+                for (String suggestion : createSuggestionsFromMetadata(metadata)) {
+                    rsNode.addSuggestedResponse(suggestion);
+                }
+                for (ConversationNodeButton button : createButtonsFromMetadata(metadata)) {
+                    rsNode.addButton(button);
+                }
+
+                conversationNode = rsNode;
+                break;
+            case JavaScript:
+                JavaScriptNode jsNode = new JavaScriptNode(id, snippetType, content);
+
+                for (String suggestion : createSuggestionsFromMetadata(metadata)) {
+                	jsNode.addSuggestedResponse(suggestion);
+                }
+                for (ConversationNodeButton button : createButtonsFromMetadata(metadata)) {
+                	jsNode.addButton(button);
+                }
+
+                conversationNode = jsNode;
+                break;
+            default:
+                return null;
+        }
+
+        return conversationNode;
+    }
+
     /**
      * Creates an <code>IConversationEdge</code> from JSON. Override this to
      * handle additional edge types. The call to

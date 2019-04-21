@@ -53,4 +53,15 @@ public class OutputUtil {
     public static void formatResponse(Formatter formatter, String response) {
         formatter.format("  > %100s <\n", response);
     }
+    
+    public static void main(String[] args) {
+		StringBuilder convo = new StringBuilder();
+		Formatter formatter = new Formatter(convo);
+		formatter.format("%s", "Hi");
+		convo.append("\n");
+		convo.append("1");
+		formatter.format("%s", "2");
+		System.out.println(formatter.toString());
+		formatter.close();
+	}
 }

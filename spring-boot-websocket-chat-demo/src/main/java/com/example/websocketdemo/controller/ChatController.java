@@ -19,8 +19,6 @@ import com.example.websocketdemo.model.ChatMessage;
 import com.example.websocketdemo.model.ChatMessage.MessageType;
 
 /**
- * Created by rajeevkumarsingh on 24/07/17.
- * @param <S>
  */
 @Controller
 public class ChatController<S extends IConversationState<String, Object>> {
@@ -38,7 +36,6 @@ public class ChatController<S extends IConversationState<String, Object>> {
 	}
 
 	@MessageMapping("/chat.addUser")
-//	@SendToUser("/queue/reply")
 	public void addUser(@Payload ChatMessage chatMessage, 
 			SimpMessageHeaderAccessor headerAccessor) {
 		ChatMessage serverMessage = new ChatMessage();
@@ -69,13 +66,15 @@ public class ChatController<S extends IConversationState<String, Object>> {
 		headerAccessor.getMessageHeaders()
 		.forEach((k,v) -> System.out.println("Key: "+k+" value: "+v));
 		
-		System.out.println("SessionAttributesContent");
+		System.out.println("SessionAttributes Content");
 		headerAccessor.getSessionAttributes()
 		.forEach((k,v) -> System.out.println("Key: "+k+" value: "+v));
+
+		HttpSession session = (HttpSession) headerAccessor.getSessionAttributes().get(AssignPrincipalHandshakeHandler.REQ_SESSION);
+		System.out.println("Session Id "+session.getId());
 	}
 
 	@MessageMapping("/chat.toUser")
-//	@SendToUser("/queue/reply")
 	public void sendToUser(@Payload ChatMessage chatMessage,
 			SimpMessageHeaderAccessor headerAccessor) {
 		System.out.println("Received new Message "+chatMessage.getContent()+" from User "+chatMessage.getSender());

@@ -6,7 +6,7 @@
 			{
 				"id": "1",
 				"type": "StringReplacing",
-				"label": "I am a Travel Agent bot. I can help you in booking tickets",
+				"label": "Hi {{sender}} !!! I am a Travel Bot. I can help you in booking tickets",
 				"metadata": {
 					"snippetType": "STATEMENT"
 				}
